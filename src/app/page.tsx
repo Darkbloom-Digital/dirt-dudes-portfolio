@@ -64,7 +64,7 @@ export default function Home() {
 
             {/* Navigation Links */}
             <div className="hidden md:flex items-center justify-center space-x-8">
-              <a href="/" className="text-white hover:text-red-500 font-medium transition-colors duration-200 text-base">
+              <a href="#" className="text-white hover:text-red-500 font-medium transition-colors duration-200 text-base">
                 HOME
               </a>
               <div className="relative group">
@@ -266,6 +266,156 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section className="py-24 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ef4444' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '60px 60px'
+          }} />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-12">
+            <h2 className="text-5xl md:text-6xl font-extrabold text-white mb-6">
+              Ready to Transform Your Land?
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
+              From concept to completion, we're here to help you achieve your vision. 
+              Get a free consultation and quote for your project today.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="bg-black/50 backdrop-blur-sm p-8 rounded-lg border border-red-600/20 hover:border-red-600/40 transition-all duration-300">
+              <div className="text-red-600 mb-4">
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">Call Us</h3>
+              <p className="text-gray-300 mb-4">Speak directly with our experts about your project needs</p>
+              <a href="tel:+1234567890" className="text-red-600 hover:text-red-500 font-semibold inline-flex items-center">
+                (123) 456-7890
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+
+            <div className="bg-black/50 backdrop-blur-sm p-8 rounded-lg border border-red-600/20 hover:border-red-600/40 transition-all duration-300">
+              <div className="text-red-600 mb-4">
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">Text Us</h3>
+              <p className="text-gray-300 mb-4">Send us a message anytime for quick responses</p>
+              <a href="sms:+1234567890" className="text-red-600 hover:text-red-500 font-semibold inline-flex items-center">
+                Send Message
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+
+            <div className="bg-black/50 backdrop-blur-sm p-8 rounded-lg border border-red-600/20 hover:border-red-600/40 transition-all duration-300">
+              <div className="text-red-600 mb-4">
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">Email Us</h3>
+              <p className="text-gray-300 mb-4">Send detailed project requirements and questions</p>
+              <a href="mailto:info@tndirtpros.com" className="text-red-600 hover:text-red-500 font-semibold inline-flex items-center">
+                info@tndirtpros.com
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div className="mt-16 text-center">
+            <button className="px-8 py-4 bg-red-600 text-white text-lg font-semibold rounded-md hover:bg-red-700 transition-colors duration-200 transform hover:scale-105">
+              Get Your Free Quote Today
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-24 bg-black relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="mb-20">
+            <div className="flex items-center">
+              <h2 className="text-6xl font-extrabold text-white">
+                GET A QUOTE
+              </h2>
+              <div className="h-[2px] bg-red-600 flex-grow ml-8"></div>
+            </div>
+            <p className="text-xl text-gray-300 max-w-3xl mt-6">
+              Receiving a quote is easy and only takes three simple steps
+            </p>
+          </div>
+
+          {/* Process Steps */}
+          <div className="flex items-center justify-between max-w-6xl mx-auto">
+            {/* Step 1 */}
+            <div className="w-[300px] h-[200px] relative">
+              <div className="bg-red-600 skew-x-[348deg] p-8 h-full transform transition-transform duration-300 hover:-translate-y-2">
+                <div className="text-center -skew-x-[348deg] flex flex-col justify-center h-full">
+                  <h3 className="text-3xl font-bold text-white mb-6">
+                    SEND US A<br />TEXT
+                  </h3>
+                  <button className="bg-white text-black text-xl font-bold px-8 py-3 rounded hover:bg-gray-100 transition-colors duration-200">
+                    TEXT US
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Arrow 1 */}
+            <div className="flex-shrink-0 transform translate-y-[-10px]">
+              <svg className="w-16 h-16 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
+              </svg>
+            </div>
+
+            {/* Step 2 */}
+            <div className="w-[300px] h-[200px] relative">
+              <div className="bg-black border-2 border-red-600 skew-x-[348deg] p-8 h-full transform transition-transform duration-300 hover:-translate-y-2">
+                <div className="text-center -skew-x-[348deg] flex flex-col justify-center h-full">
+                  <h3 className="text-3xl font-bold text-white">
+                    CHAT ON<br />THE PHONE
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            {/* Arrow 2 */}
+            <div className="flex-shrink-0 transform translate-y-[-10px]">
+              <svg className="w-16 h-16 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
+              </svg>
+            </div>
+
+            {/* Step 3 */}
+            <div className="w-[300px] h-[200px] relative">
+              <div className="bg-black border-2 border-red-600 skew-x-[348deg] p-8 h-full transform transition-transform duration-300 hover:-translate-y-2">
+                <div className="text-center -skew-x-[348deg] flex flex-col justify-center h-full">
+                  <h3 className="text-3xl font-bold text-white">
+                    RECEIVE<br />A QUOTE
+                  </h3>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
