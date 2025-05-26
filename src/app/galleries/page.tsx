@@ -220,7 +220,7 @@ export default function GalleriesPage() {
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto"
           >
-            Let's discuss your project and create a custom solution that meets your needs.
+            Let&apos;s discuss your project and create a custom solution that meets your needs.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

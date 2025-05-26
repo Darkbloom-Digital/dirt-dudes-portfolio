@@ -43,8 +43,7 @@ export default function SepticInstallationPage() {
             >
               <h2 className="text-3xl font-bold text-white mb-6">Professional Septic Services</h2>
               <p className="text-gray-300 mb-6">
-                Our experienced team ensures proper installation and function of your septic system. 
-                We handle all aspects of the process, from initial evaluation to final inspection.
+                We&apos;ve installed septic systems for properties of all sizes. Let&apos;s ensure your system is done right!
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center text-gray-300">
@@ -106,7 +105,7 @@ export default function SepticInstallationPage() {
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto"
           >
-            Contact us today for a free consultation. We'll help you design and install the right septic system for your property.
+            Contact us today for a free consultation and quote. We&apos;ll help you with professional septic installation and maintenance.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

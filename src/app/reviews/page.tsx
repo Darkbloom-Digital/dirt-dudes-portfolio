@@ -251,7 +251,7 @@ export default function ReviewsPage() {
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto"
           >
-            Had a great experience with TN Dirt Pros? We'd love to hear about it!
+            Had a great experience with TN Dirt Pros? We&apos;d love to hear about it!
           </motion.p>
           <motion.button 
             initial={{ opacity: 0, y: 20 }}

@@ -43,8 +43,7 @@ export default function TreeRemovalPage() {
             >
               <h2 className="text-3xl font-bold text-white mb-6">Professional Tree Services</h2>
               <p className="text-gray-300 mb-6">
-                Our team has the equipment and expertise to handle trees of any size. We prioritize safety 
-                and efficiency in every project, ensuring your property is protected throughout the process.
+                We&apos;ve safely removed trees for hundreds of clients. Let&apos;s help you next!
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center text-gray-300">
@@ -106,7 +105,7 @@ export default function TreeRemovalPage() {
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto"
           >
-            Contact us today for a free assessment and quote. We'll handle your tree removal needs safely and efficiently.
+            Contact us today for a free assessment and quote. We&apos;ll handle your tree removal needs safely and efficiently.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

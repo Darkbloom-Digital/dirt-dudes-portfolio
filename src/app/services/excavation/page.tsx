@@ -106,7 +106,7 @@ export default function ExcavationPage() {
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto"
           >
-            Contact us today for a free consultation and estimate. We'll help you plan and execute your excavation project efficiently.
+            Contact us today for a free consultation and estimate. We&apos;ll help you plan and execute your excavation project efficiently.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

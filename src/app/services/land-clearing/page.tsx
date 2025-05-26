@@ -43,9 +43,7 @@ export default function LandClearingPage() {
             >
               <h2 className="text-3xl font-bold text-white mb-6">Expert Land Clearing Solutions</h2>
               <p className="text-gray-300 mb-6">
-                Our professional land clearing services are designed to prepare your property for construction, 
-                development, or landscaping. We handle everything from small residential lots to large commercial 
-                properties with precision and care.
+                We&apos;ve cleared land for homes, businesses, and more. Let&apos;s get your project started!
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center text-gray-300">
@@ -107,7 +105,7 @@ export default function LandClearingPage() {
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto"
           >
-            Contact us today for a free consultation and quote. We'll help you transform your property with our professional services.
+            Contact us today for a free consultation and quote. We&apos;ll help you transform your property with our professional services.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

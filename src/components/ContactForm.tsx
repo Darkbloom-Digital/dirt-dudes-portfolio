@@ -129,7 +129,7 @@ export default function ContactForm() {
             <div className="h-[2px] bg-red-600 flex-grow ml-8"></div>
           </div>
           <p className="text-xl text-gray-300 mt-6 max-w-3xl">
-            Ready to transform your land? Fill out the form below and we'll get back to you within 24 hours.
+            Ready to transform your land? Fill out the form below and we&apos;ll get back to you within 24 hours.
           </p>
         </div>
 
@@ -273,7 +273,7 @@ export default function ContactForm() {
                 animate={{ opacity: 1, y: 0 }}
                 className="p-4 bg-green-500/10 border border-green-500/20 rounded-md"
               >
-                <p className="text-green-500">Thank you for your message! We'll be in touch soon.</p>
+                <p className="text-green-500">Thank you for your message! We&apos;ll be in touch soon.</p>
               </motion.div>
             )}
 

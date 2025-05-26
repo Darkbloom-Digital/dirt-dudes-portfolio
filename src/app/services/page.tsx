@@ -1,6 +1,5 @@
 'use client';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 // Import services data
 const services = [
@@ -164,7 +163,7 @@ export default function ServicesPage() {
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto"
           >
-            Contact us today for a free consultation and quote. We'll help you transform your property with our professional services.
+            Contact us today for a free consultation and quote. We&apos;ll help you transform your property with our professional services.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

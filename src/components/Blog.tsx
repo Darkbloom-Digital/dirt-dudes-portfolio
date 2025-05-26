@@ -14,7 +14,7 @@ const blogPosts = [
   {
     id: 2,
     title: "The Impact of Professional Tree Removal on Property Value",
-    excerpt: "Discover how strategic tree removal can enhance your property's value and create more usable space.",
+    excerpt: "Discover how strategic tree removal can enhance your property&apos;s value and create more usable space.",
     image: "/images/placeholder.svg",
     date: "March 10, 2024",
     readTime: "4 min read",

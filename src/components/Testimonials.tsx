@@ -15,7 +15,7 @@ const testimonials = [
     name: "Sarah Johnson",
     role: "Real Estate Developer",
     image: "/images/placeholder.svg",
-    quote: "We've worked with many land clearing companies, but TN Dirt Pros stands out for their reliability and quality of work. They're our go-to team now.",
+    quote: "We&apos;ve worked with many land clearing companies, but TN Dirt Pros stands out for their reliability and quality of work. They&apos;re our go-to team now.",
     rating: 5
   },
   {
@@ -101,7 +101,7 @@ export default function Testimonials() {
                           </svg>
                         ))}
                       </div>
-                      <p className="text-xl text-white italic mb-8">"{testimonial.quote}"</p>
+                      <p className="text-xl text-white italic mb-8">&quot;{testimonial.quote}&quot;</p>
                     </div>
                     <div className="flex items-center">
                       <div className="relative w-16 h-16 rounded-full overflow-hidden">

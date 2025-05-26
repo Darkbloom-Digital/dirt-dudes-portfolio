@@ -285,7 +285,7 @@ export default function Home() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
             TN Dirt Pros
           </h1>
-          <p className="text-lg md:text-xl text-gray-200 mb-6 md:mb-8 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
             Professional land clearing services in Cleveland, TN provided by TN Dirt Pros. 
             Dependable experts for all your land clearing needs, ensuring top-quality results every time.
           </p>
@@ -460,7 +460,7 @@ export default function Home() {
               Ready to Transform Your Land?
             </h2>
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8 md:mb-12">
-              From concept to completion, we're here to help you achieve your vision. 
+              From concept to completion, we&apos;re here to help you achieve your vision. 
               Get a free consultation and quote for your project today.
             </p>
           </div>
@@ -574,7 +574,7 @@ export default function Home() {
               <div className="h-[2px] bg-red-600 flex-grow ml-4 md:ml-8"></div>
             </div>
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mt-4 md:mt-6">
-              Have questions? We're here to help. Send us a message and we'll respond as soon as possible.
+              Have questions? We&apos;re here to help. Send us a message and we&apos;ll respond as soon as possible.
             </p>
           </div>
           <ContactForm />

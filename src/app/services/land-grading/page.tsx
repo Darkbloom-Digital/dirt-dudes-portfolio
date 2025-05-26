@@ -43,8 +43,7 @@ export default function LandGradingPage() {
             >
               <h2 className="text-3xl font-bold text-white mb-6">Expert Land Grading Solutions</h2>
               <p className="text-gray-300 mb-6">
-                We ensure proper drainage and prepare your site for construction or landscaping. Our team 
-                uses advanced equipment and techniques to achieve precise grading for any project.
+                We&apos;ll make sure your land is ready for construction or landscaping. Let&apos;s talk about your project!
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center text-gray-300">
@@ -106,7 +105,7 @@ export default function LandGradingPage() {
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto"
           >
-            Contact us today for a free site evaluation and quote. We'll ensure your property has proper drainage and is ready for your project.
+            Contact us today for a free site evaluation and quote. We&apos;ll ensure your property has proper drainage and is ready for your project.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

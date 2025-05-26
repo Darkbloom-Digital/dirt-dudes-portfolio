@@ -1,44 +1,48 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 
 // Sample media data - replace with your actual content
-const tier1Media = [
+const tier1Media: MediaItemType[] = [
   { type: 'image', src: '/images/placeholder.svg', alt: 'Land clearing project 1' },
-  { type: 'video', src: '/videos/sample1.mp4', thumbnail: '/images/placeholder.svg' },
+  { type: 'video', src: '/videos/sample1.mp4', thumbnail: '/images/placeholder.svg', alt: 'Video: Land clearing project 1' },
   { type: 'image', src: '/images/placeholder.svg', alt: 'Excavation work 1' },
-  { type: 'video', src: '/videos/sample2.mp4', thumbnail: '/images/placeholder.svg' },
+  { type: 'video', src: '/videos/sample2.mp4', thumbnail: '/images/placeholder.svg', alt: 'Video: Excavation work 1' },
   { type: 'image', src: '/images/placeholder.svg', alt: 'Tree removal 1' },
   { type: 'image', src: '/images/placeholder.svg', alt: 'Site preparation 1' },
 ];
 
-const tier2Media = [
-  { type: 'video', src: '/videos/sample3.mp4', thumbnail: '/images/placeholder.svg' },
+const tier2Media: MediaItemType[] = [
+  { type: 'video', src: '/videos/sample3.mp4', thumbnail: '/images/placeholder.svg', alt: 'Video: Land clearing project 2' },
   { type: 'image', src: '/images/placeholder.svg', alt: 'Land clearing project 2' },
   { type: 'image', src: '/images/placeholder.svg', alt: 'Excavation work 2' },
-  { type: 'video', src: '/videos/sample4.mp4', thumbnail: '/images/placeholder.svg' },
+  { type: 'video', src: '/videos/sample4.mp4', thumbnail: '/images/placeholder.svg', alt: 'Video: Excavation work 2' },
   { type: 'image', src: '/images/placeholder.svg', alt: 'Tree removal 2' },
   { type: 'image', src: '/images/placeholder.svg', alt: 'Site preparation 2' },
 ];
 
+// Define a type for media items
+interface MediaItemType {
+  type: 'image' | 'video';
+  src: string;
+  alt?: string;
+  thumbnail?: string;
+}
+
 interface MediaItemProps {
-  item: any;
+  item: MediaItemType;
   index: number;
-  onItemClick: (item: any) => void;
+  onItemClick: (item: MediaItemType) => void;
 }
 
 const MediaItem = ({ item, index, onItemClick }: MediaItemProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <div 
       className="relative w-[300px] h-[200px] mx-4 rounded-lg overflow-hidden group cursor-pointer flex-shrink-0"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       onClick={() => onItemClick(item)}
     >
       {/* Thumbnail/Image */}
       <Image
-        src={item.type === 'video' ? item.thumbnail : item.src}
+        src={item.type === 'video' ? item.thumbnail! : item.src}
         alt={item.alt || `Media item ${index + 1}`}
         fill
         className="object-cover transition-transform duration-300 group-hover:scale-110"
@@ -61,7 +65,7 @@ const MediaItem = ({ item, index, onItemClick }: MediaItemProps) => {
   );
 };
 
-const MediaModal = ({ item, onClose }: { item: any; onClose: () => void }) => {
+const MediaModal = ({ item, onClose }: { item: MediaItemType; onClose: () => void }) => {
   // Prevent clicks inside the modal from closing it
   const handleContentClick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -98,7 +102,7 @@ const MediaModal = ({ item, onClose }: { item: any; onClose: () => void }) => {
           <div className="relative h-[80vh]">
             <Image
               src={item.src}
-              alt={item.alt}
+              alt={item.alt || 'Media item'}
               fill
               className="object-contain"
             />
@@ -110,9 +114,9 @@ const MediaModal = ({ item, onClose }: { item: any; onClose: () => void }) => {
 };
 
 export default function MediaCarousel() {
-  const [selectedItem, setSelectedItem] = useState<any>(null);
+  const [selectedItem, setSelectedItem] = useState<MediaItemType | null>(null);
 
-  const handleItemClick = (item: any) => {
+  const handleItemClick = (item: MediaItemType) => {
     setSelectedItem(item);
   };
 

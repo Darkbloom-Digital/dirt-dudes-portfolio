@@ -27,7 +27,7 @@ export default function DrivewayConstructionPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl text-gray-300 max-w-3xl mx-auto px-4"
           >
-            Custom driveway construction and grading services that enhance your property's value and accessibility
+            Custom driveway construction and grading services that enhance your property&apos;s value and accessibility
           </motion.p>
         </div>
       </section>
@@ -43,8 +43,7 @@ export default function DrivewayConstructionPage() {
             >
               <h2 className="text-3xl font-bold text-white mb-6">Expert Driveway Solutions</h2>
               <p className="text-gray-300 mb-6">
-                We create durable, well-designed driveways that not only look great but also provide proper 
-                drainage and long-lasting functionality. Our team handles everything from design to final construction.
+                We&apos;ve built driveways for all types of properties. Let&apos;s create a custom solution for your needs.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center text-gray-300">
@@ -106,7 +105,7 @@ export default function DrivewayConstructionPage() {
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto"
           >
-            Contact us today for a free consultation and estimate. We'll help you design and build the perfect driveway for your property.
+            Contact us today for a free consultation and estimate. We&apos;ll help you design and build the perfect driveway for your property.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
