@@ -86,12 +86,12 @@ export default function Navbar() {
       {mobileOpen && (
         <div
           className="fixed inset-0 z-50 bg-black/90 flex flex-col"
-          style={{ background: '#000', zIndex: 9999 }}
+          style={{ background: 'transparent', zIndex: 9999 }}
           role="dialog"
           aria-modal="true"
         >
           {/* Header with Logo and Close Button */}
-          <div className="flex items-center justify-between px-6 py-3">
+          <div className="flex items-center justify-between px-6 py-3 bg-transparent">
             <Link href="/" onClick={() => setMobileOpen(false)}>
               <Image src="/logo.svg" alt="TN Dirt Pros" width={110} height={36} className="object-contain" />
             </Link>
@@ -121,7 +121,7 @@ export default function Navbar() {
             ))}
           </nav>
           {/* Contact Buttons at Bottom */}
-          <div className="px-6 py-4">
+          <div className="px-6 py-4 space-y-3">
             <a href="tel:+1234567890" className="w-full py-3 bg-red-600 text-white text-lg font-semibold rounded-md text-center hover:bg-red-700 transition-colors">CALL NOW</a>
             <a href="sms:+1234567890" className="w-full py-3 border-2 border-red-600 text-white text-lg font-semibold rounded-md text-center hover:bg-red-600/10 transition-colors">SEND US A TEXT</a>
           </div>
