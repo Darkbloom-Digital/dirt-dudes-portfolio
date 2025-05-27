@@ -41,7 +41,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50">
       {/* Desktop Nav */}
-      <div className={`hidden lg:flex items-center justify-between h-20 px-6 xl:px-16 2xl:px-32 transition-all duration-200 ${isScrolled ? 'backdrop-blur-md' : 'bg-transparent'}`}>
+      <div className={`hidden lg:flex items-center justify-between h-20 px-6 xl:px-16 2xl:px-32 transition-all duration-200 ${isScrolled ? 'backdrop-blur-md bg-black/30' : 'bg-transparent'}`}>
         <Link href="/" className="flex items-center gap-2">
           <Image src="/logo.svg" alt="TN Dirt Pros" width={140} height={44} className="object-contain" />
         </Link>
@@ -86,12 +86,12 @@ export default function Navbar() {
       {mobileOpen && (
         <div
           className="fixed inset-0 z-50 bg-black/90 flex flex-col"
-          style={{ background: 'transparent', zIndex: 9999 }}
+          style={{ zIndex: 9999 }}
           role="dialog"
           aria-modal="true"
         >
           {/* Header with Logo and Close Button */}
-          <div className="flex items-center justify-between px-6 py-3 bg-transparent">
+          <div className="flex items-center justify-between px-6 py-3 bg-transparent w-full" style={{ position: 'sticky', top: 0, zIndex: 10 }}>
             <Link href="/" onClick={() => setMobileOpen(false)}>
               <Image src="/logo.svg" alt="TN Dirt Pros" width={110} height={36} className="object-contain" />
             </Link>
@@ -107,7 +107,7 @@ export default function Navbar() {
             </button>
           </div>
           {/* Navigation Links */}
-          <nav className="flex-1 flex flex-col items-center justify-center space-y-4">
+          <nav className="flex-1 flex flex-col items-center justify-center space-y-4 w-full">
             {navLinks.map(link => (
               <Link
                 key={link.href}
@@ -121,7 +121,7 @@ export default function Navbar() {
             ))}
           </nav>
           {/* Contact Buttons at Bottom */}
-          <div className="px-6 py-4 space-y-3">
+          <div className="px-6 py-4 space-y-3 w-full">
             <a href="tel:+1234567890" className="w-full py-3 bg-red-600 text-white text-lg font-semibold rounded-md text-center hover:bg-red-700 transition-colors">CALL NOW</a>
             <a href="sms:+1234567890" className="w-full py-3 border-2 border-red-600 text-white text-lg font-semibold rounded-md text-center hover:bg-red-600/10 transition-colors">SEND US A TEXT</a>
           </div>
