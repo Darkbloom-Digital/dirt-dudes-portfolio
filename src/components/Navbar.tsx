@@ -85,7 +85,7 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       {mobileOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 flex flex-col"
+          className="fixed inset-0 z-50 bg-black flex flex-col"
           style={{ zIndex: 9999 }}
           role="dialog"
           aria-modal="true"
@@ -121,7 +121,7 @@ export default function Navbar() {
             ))}
           </nav>
           {/* Contact Buttons at Bottom */}
-          <div className="px-6 py-4 space-y-3 w-full">
+          <div className="px-6 py-4 flex flex-col space-y-3 w-full">
             <a href="tel:+1234567890" className="w-full py-3 bg-red-600 text-white text-lg font-semibold rounded-md text-center hover:bg-red-700 transition-colors">CALL NOW</a>
             <a href="sms:+1234567890" className="w-full py-3 border-2 border-red-600 text-white text-lg font-semibold rounded-md text-center hover:bg-red-600/10 transition-colors">SEND US A TEXT</a>
           </div>
