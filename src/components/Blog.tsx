@@ -34,32 +34,32 @@ const blogPosts = [
 export default function Blog() {
   return (
     <div className="relative py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-20">
           <div className="flex items-center">
-            <h2 className="text-6xl font-extrabold text-white">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white">
               LATEST NEWS
             </h2>
             <div className="h-[2px] bg-red-600 flex-grow ml-8"></div>
           </div>
-          <p className="text-xl text-gray-300 mt-6 max-w-3xl">
+          <p className="text-base sm:text-xl text-gray-300 mt-6 max-w-3xl">
             Stay updated with our latest articles, tips, and industry insights.
           </p>
         </div>
 
         {/* Blog Posts Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {blogPosts.map((post, index) => (
             <motion.article
               key={post.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
-              className="bg-neutral-900/50 backdrop-blur-sm rounded-lg overflow-hidden border border-white/10 hover:border-red-500/30 transition-all duration-300 group"
+              className="bg-neutral-900/50 backdrop-blur-sm rounded-lg overflow-hidden border border-white/10 hover:border-red-500/30 transition-all duration-300 group flex flex-col"
             >
               {/* Image Container */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-40 sm:h-48 overflow-hidden">
                 <Image
                   src={post.image}
                   alt={post.title}
@@ -75,22 +75,19 @@ export default function Blog() {
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <div className="flex items-center text-sm text-gray-400 mb-4">
+              <div className="p-4 sm:p-6 flex flex-col flex-1">
+                <div className="flex items-center text-xs sm:text-sm text-gray-400 mb-2 sm:mb-4">
                   <span>{post.date}</span>
                   <span className="mx-2">•</span>
                   <span>{post.readTime}</span>
                 </div>
-                
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-red-500 transition-colors duration-200">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-red-500 transition-colors duration-200">
                   {post.title}
                 </h3>
-                
-                <p className="text-gray-400 mb-6">
+                <p className="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base flex-1">
                   {post.excerpt}
                 </p>
-
-                <button className="text-red-500 font-semibold inline-flex items-center group-hover:text-red-400 transition-colors duration-200">
+                <button className="text-red-500 font-semibold inline-flex items-center group-hover:text-red-400 transition-colors duration-200 mt-auto">
                   Read More
                   <svg 
                     className="w-4 h-4 ml-2 transform transition-transform duration-200 group-hover:translate-x-1" 
@@ -107,11 +104,11 @@ export default function Blog() {
         </div>
 
         {/* View All Button */}
-        <div className="mt-16 text-center">
+        <div className="mt-12 sm:mt-16 text-center">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-red-600 text-white text-lg font-semibold rounded-md hover:bg-red-700 transition-colors duration-200"
+            className="px-6 py-3 sm:px-8 sm:py-4 bg-red-600 text-white text-base sm:text-lg font-semibold rounded-md hover:bg-red-700 transition-colors duration-200"
           >
             View All Articles
           </motion.button>

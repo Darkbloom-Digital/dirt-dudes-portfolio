@@ -7,6 +7,7 @@ const services = [
     id: 'land-clearing',
     title: "Land Clearing",
     description: "Professional land clearing services for residential and commercial properties. We handle everything from small lots to large acreage with precision and care.",
+    image: "/images/LandClearing.jpeg",
     features: [
       "Brush & undergrowth removal",
       "Tree removal & stump grinding",
@@ -18,6 +19,7 @@ const services = [
     id: 'tree-removal',
     title: "Tree Removal",
     description: "Expert tree removal and trimming services with safety guaranteed. Our team has the equipment and expertise to handle trees of any size.",
+    image: "/images/TreeRemoval.jpeg",
     features: [
       "Emergency tree removal",
       "Hazardous tree assessment",
@@ -29,6 +31,7 @@ const services = [
     id: 'driveway-construction',
     title: "Driveway Construction",
     description: "Custom driveway construction and grading services. We create durable, well-designed driveways that enhance your property's value and accessibility.",
+    image: "/images/DrivewayConstruction.jpeg",
     features: [
       "Custom design & layout",
       "Proper drainage solutions",
@@ -40,6 +43,7 @@ const services = [
     id: 'septic-installation',
     title: "Septic Installation",
     description: "Complete septic system installation and maintenance. Our experienced team ensures proper installation and function of your septic system.",
+    image: "/images/SepticInstallation.jpeg",
     features: [
       "Site evaluation",
       "System design",
@@ -51,6 +55,7 @@ const services = [
     id: 'land-grading',
     title: "Land Grading",
     description: "Professional land grading and leveling services. We ensure proper drainage and prepare your site for construction or landscaping.",
+    image: "/images/LandGrading.jpeg",
     features: [
       "Site analysis",
       "Erosion control",
@@ -62,6 +67,7 @@ const services = [
     id: 'excavation',
     title: "Excavation",
     description: "Comprehensive excavation services for any project size. From small residential jobs to large commercial projects, we have the equipment and expertise.",
+    image: "/images/Excavation.jpeg",
     features: [
       "Site preparation",
       "Basement excavation",
@@ -105,41 +111,42 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <section className="py-24 bg-gradient-to-b from-neutral-900 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12">
             {services.map((service, index) => (
               <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-neutral-900/50 backdrop-blur-sm rounded-lg overflow-hidden border border-white/10 hover:border-red-500/30 transition-all duration-300"
+                className="group relative min-h-56 md:min-h-80 lg:min-h-96 bg-neutral-900/50 backdrop-blur-sm rounded-lg overflow-hidden border-2 border-red-800 transition-all duration-300 flex flex-col bg-center"
+                style={{
+                  backgroundImage: `url(${service.image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
               >
-                <div className="relative h-64 bg-neutral-800">
-                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 to-transparent" />
-                  <div className="absolute bottom-4 left-4">
-                    <h2 className="text-3xl font-bold text-white">{service.title}</h2>
+                <div className="absolute inset-0 bg-black/70 z-0 transition-opacity duration-300 group-hover:opacity-0" />
+                <div className="relative z-10 p-3 md:p-6 flex flex-col h-full justify-end">
+                  <div className="transition-opacity duration-300 group-hover:opacity-0">
+                    <h2 className="text-xl md:text-3xl font-bold text-white mb-2 md:mb-4">{service.title}</h2>
+                    <p className="text-sm md:text-base text-gray-300 mb-3 md:mb-6">{service.description}</p>
+                    <ul className="space-y-2 md:space-y-3 mb-3 md:mb-6">
+                      {service.features.map((feature, i) => (
+                        <li key={i} className="flex items-center text-gray-300 text-xs md:text-base">
+                          <svg className="w-4 h-4 md:w-5 md:h-5 text-red-500 mr-2 md:mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
-                <div className="p-6">
-                  <p className="text-gray-300 mb-6">{service.description}</p>
-                  <ul className="space-y-3">
-                    {service.features.map((feature, i) => (
-                      <li key={i} className="flex items-center text-gray-300">
-                        <svg className="w-5 h-5 text-red-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-8">
-                    <a 
-                      href={`/services/${service.id}`}
-                      className="block w-full px-6 py-3 bg-red-600 text-white text-lg font-semibold rounded-md hover:bg-red-700 transition-colors duration-200 text-center"
-                    >
-                      Learn More
-                    </a>
-                  </div>
+                  <a 
+                    href={`/services/${service.id}`}
+                    className="block w-full px-4 py-2 md:px-6 md:py-3 bg-red-600 text-white text-sm md:text-lg font-semibold rounded-md hover:bg-red-700 transition-colors duration-200 text-center mt-3 md:mt-6"
+                  >
+                    Learn More
+                  </a>
                 </div>
               </motion.div>
             ))}

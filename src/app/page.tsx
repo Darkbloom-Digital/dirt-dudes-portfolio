@@ -7,6 +7,7 @@ import MediaCarousel from '@/components/MediaCarousel';
 import Testimonials from '@/components/Testimonials';
 import ContactForm from '@/components/ContactForm';
 import Blog from '@/components/Blog';
+import Navbar from '@/components/Navbar';
 
 // Define services array
 const services = [
@@ -67,209 +68,11 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-black">
-      {/* Navigation Bar */}
-      <header className="fixed w-full bg-black/90 backdrop-blur-md z-50 border-b border-white/10">
-        <nav className="max-w-7xl mx-auto" aria-label="Main navigation">
-          <div className="flex items-center justify-between h-16 md:h-20 px-4 sm:px-6 lg:px-8">
-            {/* Logo */}
-            <Link href="/" className="flex-shrink-0">
-              <Image 
-                src="/logo.svg"
-                alt="TN Dirt Pros"
-                width={120}
-                height={40}
-                className="object-contain w-[120px] md:w-[150px]"
-              />
-            </Link>
-
-            {/* Mobile Menu Button */}
-            <button 
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="menu-button md:hidden p-2 text-white hover:text-red-500 transition-colors duration-200"
-              aria-label="Toggle menu"
-              aria-expanded={isMobileMenuOpen}
-            >
-              {isMobileMenuOpen ? (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
-            </button>
-
-            {/* Navigation Links - Desktop */}
-            <ul className="hidden md:flex items-center justify-center space-x-8">
-              <li>
-                <Link href="/" className="text-white hover:text-red-500 font-medium transition-colors duration-200 text-base">
-                  HOME
-                </Link>
-              </li>
-              <li className="relative group">
-                <Link href="/services" className="text-white hover:text-red-500 font-medium transition-colors duration-200 text-base flex items-center">
-                  SERVICES
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </Link>
-                {/* Dropdown Menu */}
-                <div className="absolute left-0 mt-2 w-60 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                  <div className="py-2 bg-black/95 backdrop-blur-sm rounded-lg shadow-xl border border-red-900/20">
-                    {services.map((service) => (
-                      <Link
-                        key={service.id}
-                        href={`/services/${service.id}`}
-                        className="block px-4 py-3 text-sm text-white hover:bg-red-600/20 hover:text-red-500 transition-colors duration-200"
-                      >
-                        {service.title}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </li>
-              <li>
-                <Link href="/galleries" className="text-white hover:text-red-500 font-medium transition-colors duration-200 text-base">
-                  GALLERIES
-                </Link>
-              </li>
-              <li>
-                <Link href="/reviews" className="text-white hover:text-red-500 font-medium transition-colors duration-200 text-base">
-                  REVIEWS
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-white hover:text-red-500 font-medium transition-colors duration-200 text-base">
-                  BLOG
-                </Link>
-              </li>
-            </ul>
-
-            {/* Desktop CTA Button */}
-            <div className="hidden md:flex items-center">
-              <a
-                href="sms:+1234567890"
-                className="px-6 py-2 text-sm font-medium text-white bg-red-600 rounded hover:bg-red-700 transition-colors duration-200"
-              >
-                SEND US A TEXT
-              </a>
-            </div>
-          </div>
-
-          {/* Mobile Menu */}
-          {isMobileMenuOpen && (
-            <div className="fixed inset-0 z-50">
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/80 transition-opacity duration-300" />
-              {/* Menu Panel */}
-              <div
-                className="fixed inset-0 bg-black flex flex-col pt-20 pb-6 px-4 z-50"
-                role="dialog"
-                aria-modal="true"
-              >
-                {/* Close Button */}
-                <button
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="absolute top-4 right-4 p-2 text-white hover:text-red-500 transition-colors duration-200 z-50"
-                  aria-label="Close menu"
-                >
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-                <ul className="flex flex-col space-y-4">
-                  <li>
-                    <Link 
-                      href="/" 
-                      className="block py-3 text-white hover:text-red-500 font-medium transition-colors duration-200 text-xl border-b border-white/10"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      HOME
-                    </Link>
-                  </li>
-                  <li>
-                    <button 
-                      onClick={() => setIsServicesOpen(!isServicesOpen)}
-                      className="w-full flex items-center justify-between py-3 text-white hover:text-red-500 font-medium transition-colors duration-200 text-xl border-b border-white/10"
-                    >
-                      SERVICES
-                      <svg 
-                        className={`w-5 h-5 transform transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`}
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </button>
-                    <div className={`overflow-hidden transition-all duration-300 ${isServicesOpen ? 'max-h-96' : 'max-h-0'}`}>
-                      <ul className="mt-2 ml-4 space-y-2">
-                        {services.map((service) => (
-                          <li key={service.id}>
-                            <Link
-                              href={`/services/${service.id}`}
-                              className="block py-2 text-gray-300 hover:text-red-500 transition-colors duration-200 text-lg"
-                              onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                              {service.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </li>
-                  <li>
-                    <Link 
-                      href="/galleries" 
-                      className="block py-3 text-white hover:text-red-500 font-medium transition-colors duration-200 text-xl border-b border-white/10"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      GALLERIES
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      href="/reviews" 
-                      className="block py-3 text-white hover:text-red-500 font-medium transition-colors duration-200 text-xl border-b border-white/10"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      REVIEWS
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      href="/blog" 
-                      className="block py-3 text-white hover:text-red-500 font-medium transition-colors duration-200 text-xl border-b border-white/10"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      BLOG
-                    </Link>
-                  </li>
-                </ul>
-                {/* Mobile CTA Buttons */}
-                <div className="mt-auto space-y-4 pt-6 border-t border-white/10">
-                  <a
-                    href="tel:+1234567890"
-                    className="block w-full px-6 py-3 text-center text-white bg-red-600 rounded-md hover:bg-red-700 transition-colors duration-200 font-medium"
-                  >
-                    CALL NOW
-                  </a>
-                  <a
-                    href="sms:+1234567890"
-                    className="block w-full px-6 py-3 text-center text-white border border-red-600 rounded-md hover:bg-red-600/10 transition-colors duration-200 font-medium"
-                  >
-                    SEND US A TEXT
-                  </a>
-                </div>
-              </div>
-            </div>
-          )}
-        </nav>
-      </header>
+      <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-[80vh] md:h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-black to-neutral-900">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-black to-neutral-900 px-2 sm:px-4">
+        <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-black to-neutral-900 z-20" />
         <video 
           autoPlay 
           loop 
@@ -280,31 +83,39 @@ export default function Home() {
           <source src="/videos/hero-video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 bg-black/70" />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center w-full">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8">
             TN Dirt Pros
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 md:mb-10">
             Professional land clearing services in Cleveland, TN provided by TN Dirt Pros. 
             Dependable experts for all your land clearing needs, ensuring top-quality results every time.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <button className="w-full sm:w-auto px-6 py-3 md:px-8 md:py-4 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700 transition-colors duration-200 cursor-pointer">
+          <div className="flex flex-row items-center justify-center space-x-16">
+            <button className="w-auto px-4 py-2.5 lg:px-6 lg:py-3 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700 transition-colors duration-200 text-base lg:text-lg whitespace-nowrap">
               Get a Free Quote
             </button>
             <button 
               onClick={() => setIsVideoOpen(true)}
-              className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white hover:bg-white/90 flex items-center justify-center transition-all duration-200 hover:scale-110 cursor-pointer"
+              className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-full bg-white hover:bg-white/90 transition-all duration-200 hover:scale-110 cursor-pointer p-0 lg:ml-16"
+              style={{ aspectRatio: '1 / 1' }}
             >
-              <span className="text-red-600 text-xl md:text-2xl translate-x-[1px] translate-y-[1px] flex items-center justify-center">▶</span>
+              <svg
+                className="w-6 h-6 sm:w-8 sm:h-8 text-red-600"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                aria-hidden="true"
+              >
+                <polygon points="6,4 16,10 6,16" />
+              </svg>
             </button>
           </div>
         </div>
       </section>
 
       {/* About Section - Subtle dot pattern */}
-      <section className="relative py-12 md:py-20 bg-gradient-to-br from-neutral-900 via-neutral-900 to-neutral-800">
+      <section className="relative py-10 sm:py-14 md:py-20 bg-gradient-to-br from-neutral-900 via-neutral-900 to-neutral-800">
         <div className="absolute inset-0" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3C/g%3E%3C/svg%3E")`,
           backgroundSize: '20px 20px',
@@ -312,7 +123,7 @@ export default function Home() {
         }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Credentials Row */}
-          <div className="flex flex-col md:flex-row justify-center md:space-x-20 space-y-6 md:space-y-0 mb-12 md:mb-20">
+          <div className="flex flex-col md:flex-row justify-center md:space-x-20 space-y-4 md:space-y-0 mb-8 md:mb-20">
             <div className="flex items-center justify-center">
               <svg className="w-6 h-6 md:w-8 md:h-8 mr-3 text-white" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v4.7c0 4.83-3.4 9.36-7 10.6-3.6-1.24-7-5.77-7-10.6V6.3l7-3.12z"/>
@@ -336,7 +147,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
             <div className="flex flex-col justify-center">
               <div className="flex items-center mb-6 md:mb-8">
-                <h2 className="text-4xl md:text-6xl font-extrabold text-white">
+                <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white">
                   ABOUT US
                 </h2>
                 <div className="h-[2px] bg-red-600 flex-grow ml-4 md:ml-8"></div>
@@ -353,7 +164,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit our Google Business page"
-                  className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center hover:opacity-90 transition-opacity duration-200"
+                  className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center hover:opacity-90 transition-opacity duration-200"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="md:w-6 md:h-6">
                     <path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582L19.91 3C17.782 1.145 15.055 0 12 0 7.27 0 3.198 2.698 1.24 6.65l4.026 3.115Z"/>
@@ -367,7 +178,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit our Facebook page"
-                  className="w-10 h-10 md:w-12 md:h-12 bg-[#1877F2] rounded-full flex items-center justify-center hover:opacity-90 transition-opacity duration-200"
+                  className="w-10 h-10 sm:w-12 sm:h-12 bg-[#1877F2] rounded-full flex items-center justify-center hover:opacity-90 transition-opacity duration-200"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="24" viewBox="0 0 10 20" className="md:w-4 md:h-8 translate-x-0 translate-y-[2px]">
                     <path fill="#FFFFFF" d="M6.821 20v-9.196h3.047L10 7.368H6.821V5.052c0-1.01.277-1.697 1.712-1.697h1.825V.153C10.05.107 8.925 0 7.604 0 4.897 0 3.044 1.657 3.044 4.7v2.668H0v3.436h3.044V20h3.777Z"/>
@@ -389,7 +200,7 @@ export default function Home() {
       </section>
 
       {/* Services Section - Diagonal lines pattern */}
-      <section className="relative py-12 md:py-20 bg-gradient-to-r from-neutral-900 via-[#0a0a0a] to-neutral-900">
+      <section className="relative py-10 sm:py-14 md:py-20 bg-gradient-to-r from-neutral-900 via-[#0a0a0a] to-neutral-900">
         <div className="absolute inset-0" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E")`,
           backgroundSize: '40px 40px',
@@ -398,7 +209,7 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 md:mb-16">
             <div className="flex items-center">
-              <h2 className="text-4xl md:text-6xl font-extrabold text-white">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white">
                 OUR SERVICES
               </h2>
               <div className="h-[2px] bg-red-600 flex-grow ml-4 md:ml-8"></div>
@@ -408,7 +219,7 @@ export default function Home() {
             {services.map((service) => (
               <div 
                 key={service.id}
-                className="relative h-[300px] md:h-[400px] group overflow-hidden rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(239,68,68,0.3)]"
+                className="relative h-[260px] sm:h-[300px] md:h-[400px] group overflow-hidden rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(239,68,68,0.3)]"
               >
                 <div className="absolute inset-0">
                   <Image

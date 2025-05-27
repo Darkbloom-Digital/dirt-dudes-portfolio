@@ -6,7 +6,7 @@ export default function DrivewayConstructionPage() {
   return (
     <main className="min-h-screen bg-black">
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center bg-gradient-to-b from-black to-neutral-900">
+      <section className="relative min-h-0 py-6 sm:py-10 pt-36 sm:pt-28 flex items-start justify-center bg-gradient-to-b from-black to-neutral-900 px-2 sm:px-4">
         <div className="absolute inset-0" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ef4444' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           backgroundSize: '60px 60px',
@@ -33,19 +33,19 @@ export default function DrivewayConstructionPage() {
       </section>
 
       {/* Main Content */}
-      <section className="py-24 bg-gradient-to-b from-neutral-900 to-black">
+      <section className="py-10 bg-gradient-to-b from-neutral-900 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl font-bold text-white mb-6">Expert Driveway Solutions</h2>
-              <p className="text-gray-300 mb-6">
+              <h2 className="text-3xl font-bold text-white mb-3">Expert Driveway Solutions</h2>
+              <p className="text-gray-300 mb-3">
                 We&apos;ve built driveways for all types of properties. Let&apos;s create a custom solution for your needs.
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-2">
                 <li className="flex items-center text-gray-300">
                   <svg className="w-5 h-5 text-red-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -79,8 +79,8 @@ export default function DrivewayConstructionPage() {
               className="relative h-[400px] rounded-lg overflow-hidden"
             >
               <Image
-                src="/images/placeholder.svg"
-                alt="Driveway Construction Services"
+                src="/images/DrivewayConstruction.jpeg"
+                alt="Driveway Construction"
                 fill
                 className="object-cover"
               />
@@ -116,7 +116,7 @@ export default function DrivewayConstructionPage() {
             <button className="px-8 py-4 bg-red-600 text-white text-lg font-semibold rounded-md hover:bg-red-700 transition-colors duration-200 min-w-[200px]">
               Get a Quote
             </button>
-            <button className="px-8 py-4 border-2 border-red-600 text-white text-lg font-semibold rounded-md hover:bg-red-600/10 transition-colors duration-200 min-w-[200px]">
+            <button className="px-8 py-4 bg-red-600 text-white text-lg font-semibold rounded-md hover:bg-red-700 transition-colors duration-200 min-w-[200px]">
               Learn More
             </button>
           </motion.div>
