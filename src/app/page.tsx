@@ -62,7 +62,6 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-black to-neutral-900 px-2 sm:px-4">
-        <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-black to-neutral-900 z-20" />
         <video 
           autoPlay 
           loop 
