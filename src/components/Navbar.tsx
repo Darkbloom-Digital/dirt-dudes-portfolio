@@ -85,13 +85,13 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       {mobileOpen && (
         <div
-          className="fixed inset-0 bg-black z-[9999] flex flex-col h-screen w-screen"
+          className="fixed inset-0 z-50 bg-black/90 flex flex-col"
           style={{ background: '#000', zIndex: 9999 }}
           role="dialog"
           aria-modal="true"
         >
           {/* Header with Logo and Close Button */}
-          <div className="flex items-center justify-between px-6 py-5">
+          <div className="flex items-center justify-between px-6 py-3">
             <Link href="/" onClick={() => setMobileOpen(false)}>
               <Image src="/logo.svg" alt="TN Dirt Pros" width={110} height={36} className="object-contain" />
             </Link>
@@ -107,7 +107,7 @@ export default function Navbar() {
             </button>
           </div>
           {/* Navigation Links */}
-          <nav className="flex-1 flex flex-col items-center justify-center gap-6 px-6">
+          <nav className="flex-1 flex flex-col items-center justify-center space-y-4">
             {navLinks.map(link => (
               <Link
                 key={link.href}
@@ -121,7 +121,7 @@ export default function Navbar() {
             ))}
           </nav>
           {/* Contact Buttons at Bottom */}
-          <div className="px-6 pb-8 flex flex-col gap-4">
+          <div className="px-6 py-4">
             <a href="tel:+1234567890" className="w-full py-3 bg-red-600 text-white text-lg font-semibold rounded-md text-center hover:bg-red-700 transition-colors">CALL NOW</a>
             <a href="sms:+1234567890" className="w-full py-3 border-2 border-red-600 text-white text-lg font-semibold rounded-md text-center hover:bg-red-600/10 transition-colors">SEND US A TEXT</a>
           </div>

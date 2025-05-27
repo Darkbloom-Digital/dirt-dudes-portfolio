@@ -73,7 +73,7 @@ export default function Home() {
           <source src="/videos/hero-video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center w-full">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8">
             TN Dirt Pros
@@ -82,7 +82,7 @@ export default function Home() {
             Professional land clearing services in Cleveland, TN provided by TN Dirt Pros. 
             Dependable experts for all your land clearing needs, ensuring top-quality results every time.
           </p>
-          <div className="flex flex-row items-center justify-center space-x-16">
+          <div className="flex flex-row items-center justify-center space-x-6">
             <button className="w-auto px-4 py-2.5 lg:px-6 lg:py-3 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700 transition-colors duration-200 text-base lg:text-lg whitespace-nowrap">
               Get a Free Quote
             </button>
