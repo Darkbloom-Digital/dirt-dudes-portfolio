@@ -1,7 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import Footer from '@/components/Footer';
 import MediaCarousel from '@/components/MediaCarousel';
 import Testimonials from '@/components/Testimonials';
@@ -51,20 +50,11 @@ const services = [
 
 export default function Home() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isMobileMenuOpen]);
+    document.body.style.overflow = '';
+  }, []);
 
   return (
     <main className="min-h-screen bg-black">
