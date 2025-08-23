@@ -19,7 +19,7 @@ export default function ExcavationPage() {
             transition={{ duration: 0.6 }}
             className="text-3xl sm:text-5xl md:text-7xl font-extrabold text-white mb-4 sm:mb-6"
           >
-            Excavation
+            <span className="text-red-600">EXCAVATION</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -27,13 +27,13 @@ export default function ExcavationPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-base sm:text-xl text-gray-300 max-w-3xl mx-auto px-2 sm:px-4"
           >
-            Professional excavation services for all types of projects in Cleveland, TN
+            Professional excavation services for all types of projects
           </motion.p>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-6 sm:py-10 md:py-14 bg-gradient-to-b from-neutral-900 to-black">
+      <section className="py-8 bg-gradient-to-b from-neutral-900 to-black">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 items-center">
             <motion.div
@@ -90,7 +90,7 @@ export default function ExcavationPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-10 sm:py-16 md:py-24 bg-gradient-to-b from-black to-neutral-900">
+      <section className="py-12 bg-gradient-to-b from-black to-neutral-900">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 text-center">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -103,7 +103,7 @@ export default function ExcavationPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-base sm:text-xl text-gray-300 mb-8 sm:mb-12 max-w-3xl mx-auto"
+            className="text-base sm:text-xl text-gray-300 mb-8 max-w-3xl mx-auto"
           >
             Contact us today for a free excavation assessment and quote. We&apos;ll help you get your project started right.
           </motion.p>
@@ -113,15 +113,23 @@ export default function ExcavationPage() {
             transition={{ delay: 0.4 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
           >
-            <button className="w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 bg-red-600 text-white font-semibold text-base sm:text-lg rounded-md hover:bg-red-700 transition-colors duration-200 min-w-[160px] sm:min-w-[200px]">
+            <button 
+              onClick={(e) => e.preventDefault()} 
+              className="w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 bg-red-600 text-white font-semibold text-base sm:text-lg rounded-md hover:bg-red-700 transition-colors duration-200 min-w-[160px] sm:min-w-[200px] cursor-pointer"
+            >
               Get a Quote
             </button>
-            <button className="w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 bg-red-600 text-white font-semibold text-base sm:text-lg rounded-md hover:bg-red-700 transition-colors duration-200 min-w-[160px] sm:min-w-[200px]">
+            <button 
+              onClick={(e) => e.preventDefault()} 
+              className="w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 bg-red-600 text-white font-semibold text-base sm:text-lg rounded-md hover:bg-red-700 transition-colors duration-200 min-w-[160px] sm:min-w-[200px] cursor-pointer"
+            >
               Learn More
             </button>
           </motion.div>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 } 

@@ -14,37 +14,37 @@ const services = [
     id: 'land-clearing',
     title: "Land Clearing",
     description: "Professional land clearing services for residential and commercial properties.",
-    image: "/images/placeholder.svg"
+    image: "/images/LandClearing.jpeg"
   },
   {
     id: 'tree-removal',
     title: "Tree Removal",
     description: "Expert tree removal and trimming services with safety guaranteed.",
-    image: "/images/placeholder.svg"
+    image: "/images/TreeRemoval.jpeg"
   },
   {
     id: 'driveway-construction',
     title: "Driveway Construction",
     description: "Custom driveway construction and grading services.",
-    image: "/images/placeholder.svg"
+    image: "/images/DrivewayConstruction.jpeg"
   },
   {
     id: 'septic-installation',
     title: "Septic Installation",
     description: "Complete septic system installation and maintenance.",
-    image: "/images/placeholder.svg"
+    image: "/images/SepticInstallation.jpeg"
   },
   {
     id: 'land-grading',
     title: "Land Grading",
     description: "Professional land grading and leveling services.",
-    image: "/images/placeholder.svg"
+    image: "/images/LandGrading.jpeg"
   },
   {
     id: 'excavation',
     title: "Excavation",
     description: "Comprehensive excavation services for any project size.",
-    image: "/images/placeholder.svg"
+    image: "/images/Excavation.jpeg"
   }
 ];
 
@@ -74,12 +74,12 @@ export default function Home() {
         </video>
         <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center w-full">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8">
-            TN Dirt Pros
+          <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8">
+            <span className="text-red-600">DIRT</span> DUDES
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 md:mb-10">
-            Professional land clearing services in Cleveland, TN provided by TN Dirt Pros. 
-            Dependable experts for all your land clearing needs, ensuring top-quality results every time.
+          <p className="text-lg md:text-xl text-white max-w-2xl mx-auto mb-8 md:mb-10">
+            Professional excavation, land clearing, and site preparation services. 
+            From residential projects to commercial developments, we deliver quality results with reliable equipment and experienced crews.
           </p>
           <div className="flex flex-row items-center justify-center space-x-6">
             <button className="w-auto px-4 py-2.5 lg:px-6 lg:py-3 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700 transition-colors duration-200 text-base lg:text-lg whitespace-nowrap">
@@ -112,24 +112,24 @@ export default function Home() {
         }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Credentials Row */}
-          <div className="flex flex-col md:flex-row justify-center md:space-x-20 space-y-4 md:space-y-0 mb-8 md:mb-20">
+          <div className="flex flex-row md:flex-row justify-center md:space-x-20 space-x-4 md:space-x-20 space-y-0 mb-8 md:mb-20">
             <div className="flex items-center justify-center">
-              <svg className="w-6 h-6 md:w-8 md:h-8 mr-3 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 md:w-8 md:h-8 mr-2 md:mr-3 text-white" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v4.7c0 4.83-3.4 9.36-7 10.6-3.6-1.24-7-5.77-7-10.6V6.3l7-3.12z"/>
               </svg>
-              <span className="text-white text-lg md:text-xl font-bold">INSURED</span>
+              <span className="text-white text-sm md:text-xl font-bold">INSURED</span>
             </div>
             <div className="flex items-center justify-center">
-              <svg className="w-6 h-6 md:w-8 md:h-8 mr-3 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 md:w-8 md:h-8 mr-2 md:mr-3 text-white" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
               </svg>
-              <span className="text-white text-lg md:text-xl font-bold">FAMILY OWNED</span>
+              <span className="text-white text-sm md:text-xl font-bold">FAMILY OWNED</span>
             </div>
             <div className="flex items-center justify-center">
-              <svg className="w-6 h-6 md:w-8 md:h-8 mr-3 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 md:w-8 md:h-8 mr-2 md:mr-3 text-white" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
               </svg>
-              <span className="text-white text-lg md:text-xl font-bold">LOCALLY OWNED</span>
+              <span className="text-white text-sm md:text-xl font-bold">LOCALLY OWNED</span>
             </div>
           </div>
 
@@ -137,17 +137,16 @@ export default function Home() {
             <div className="flex flex-col justify-center">
               <div className="flex items-center mb-6 md:mb-8">
                 <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white">
-                  ABOUT US
+                  <span className="text-red-600">ABOUT</span> US
                 </h2>
-                <div className="h-[2px] bg-red-600 flex-grow ml-4 md:ml-8"></div>
               </div>
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8 md:mb-10">
-                At TN DIRT PROS, we are a trusted land-clearing company serving Cleveland, TN. 
-                Our skilled team specializes in excavation, tree removal, and site preparation 
-                to help you transform your property. With our expertise and top-notch equipment, 
-                we ensure efficient and reliable service for all your land-clearing needs
+                At Dirt Dudes, we are a trusted excavation and land-clearing company with years of experience 
+                in transforming properties. Our skilled team specializes in excavation, tree removal, and site preparation 
+                to help you achieve your vision. With our expertise and top-notch equipment, 
+                we ensure efficient and reliable service for all your land development needs.
               </p>
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 justify-center sm:justify-start">
                 <a 
                   href="https://google.com/business" 
                   target="_blank"
@@ -163,9 +162,7 @@ export default function Home() {
                   </svg>
                 </a>
                 <a 
-                  href="https://facebook.com/tndirtpros" 
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#" 
                   aria-label="Visit our Facebook page"
                   className="w-10 h-10 sm:w-12 sm:h-12 bg-[#1877F2] rounded-full flex items-center justify-center hover:opacity-90 transition-opacity duration-200"
                 >
@@ -177,7 +174,7 @@ export default function Home() {
             </div>
             <div className="h-[300px] md:h-[600px] bg-gray-800 rounded-lg overflow-hidden relative">
               <Image 
-                src="/images/placeholder.svg" 
+                src="/images/Excavation.jpeg" 
                 alt="Excavator working on site" 
                 fill
                 className="object-cover"
@@ -197,12 +194,12 @@ export default function Home() {
         }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 md:mb-16">
-            <div className="flex items-center">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white">
-                OUR SERVICES
-              </h2>
-              <div className="h-[2px] bg-red-600 flex-grow ml-4 md:ml-8"></div>
-            </div>
+                      <div className="flex items-center">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white">
+              <span className="text-red-600">OUR</span> SERVICES
+            </h2>
+            <div className="h-[2px] bg-red-600 flex-grow ml-8"></div>
+          </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.map((service) => (
@@ -257,7 +254,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 md:mb-6">
-              Ready to Transform Your Land?
+              Ready to <span className="text-red-600">Transform</span> Your Land?
             </h2>
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8 md:mb-12">
               From concept to completion, we&apos;re here to help you achieve your vision. 
@@ -274,12 +271,15 @@ export default function Home() {
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Call Us</h3>
               <p className="text-gray-300 mb-4">Speak directly with our experts about your project needs</p>
-              <a href="tel:+1234567890" className="text-red-600 hover:text-red-500 font-semibold inline-flex items-center">
+              <button 
+                onClick={(e) => e.preventDefault()} 
+                className="text-red-600 hover:text-red-500 font-semibold inline-flex items-center cursor-pointer"
+              >
                 (123) 456-7890
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </a>
+              </button>
             </div>
 
             <div className="bg-black/30 backdrop-blur-sm shadow-lg p-6 md:p-8 rounded-lg border border-red-900/20 hover:border-red-500/30 transition-all duration-300">
@@ -290,12 +290,15 @@ export default function Home() {
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Text Us</h3>
               <p className="text-gray-300 mb-4">Send us a message anytime for quick responses</p>
-              <a href="sms:+1234567890" className="text-red-600 hover:text-red-500 font-semibold inline-flex items-center">
+              <button 
+                onClick={(e) => e.preventDefault()} 
+                className="text-red-600 hover:text-red-500 font-semibold inline-flex items-center cursor-pointer"
+              >
                 Send Message
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </a>
+              </button>
             </div>
 
             <div className="bg-black/30 backdrop-blur-sm shadow-lg p-6 md:p-8 rounded-lg border border-red-900/20 hover:border-red-500/30 transition-all duration-300">
@@ -306,17 +309,23 @@ export default function Home() {
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Email Us</h3>
               <p className="text-gray-300 mb-4">Send detailed project requirements and questions</p>
-              <a href="mailto:info@tndirtpros.com" className="text-red-600 hover:text-red-500 font-semibold inline-flex items-center">
-                info@tndirtpros.com
+              <button 
+                onClick={(e) => e.preventDefault()} 
+                className="text-red-600 hover:text-red-500 font-semibold inline-flex items-center cursor-pointer"
+              >
+                info@dirtdudes.com
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </a>
+              </button>
             </div>
           </div>
 
           <div className="mt-12 md:mt-16 text-center">
-            <button className="w-full sm:w-auto px-6 py-3 md:px-8 md:py-4 bg-red-600 text-white text-base md:text-lg font-semibold rounded-md hover:bg-red-700 transition-colors duration-200 transform hover:scale-105">
+            <button 
+              onClick={(e) => e.preventDefault()} 
+              className="w-full sm:w-auto px-6 py-3 md:px-8 md:py-4 bg-red-600 text-white text-base md:text-lg font-semibold rounded-md hover:bg-red-700 transition-colors duration-200 transform hover:scale-105 cursor-pointer"
+            >
               Get Your Free Quote Today
             </button>
           </div>
@@ -336,14 +345,6 @@ export default function Home() {
       {/* Testimonials Section */}
       <section className="relative py-12 md:py-20 bg-gradient-to-br from-[#0a0a0a] via-neutral-900 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 md:mb-16">
-            <div className="flex items-center">
-              <h2 className="text-4xl md:text-6xl font-extrabold text-white">
-                TESTIMONIALS
-              </h2>
-              <div className="h-[2px] bg-red-600 flex-grow ml-4 md:ml-8"></div>
-            </div>
-          </div>
           <Testimonials />
         </div>
       </section>
@@ -351,13 +352,16 @@ export default function Home() {
       {/* Blog Section */}
       <section className="relative py-12 md:py-20 bg-gradient-to-br from-black via-neutral-900 to-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 md:mb-16">
+          <div className="mb-6 md:mb-8">
             <div className="flex items-center">
-              <h2 className="text-4xl md:text-6xl font-extrabold text-white">
-                LATEST NEWS
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white">
+                <span className="text-red-600">LATEST</span> NEWS
               </h2>
-              <div className="h-[2px] bg-red-600 flex-grow ml-4 md:ml-8"></div>
+              <div className="h-[2px] bg-red-600 flex-grow ml-8"></div>
             </div>
+            <p className="text-base sm:text-xl text-gray-300 mt-6 max-w-3xl">
+              Stay updated with our latest articles, tips, and industry insights.
+            </p>
           </div>
           <Blog />
         </div>
@@ -366,15 +370,15 @@ export default function Home() {
       {/* Contact Form Section */}
       <section className="relative py-12 md:py-20 bg-gradient-to-br from-[#0a0a0a] via-neutral-900 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 md:mb-16">
+          <div className="mb-6 md:mb-8">
             <div className="flex items-center">
-              <h2 className="text-4xl md:text-6xl font-extrabold text-white">
-                CONTACT US
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white">
+                <span className="text-red-600">CONTACT</span> US
               </h2>
-              <div className="h-[2px] bg-red-600 flex-grow ml-4 md:ml-8"></div>
+              <div className="h-[2px] bg-red-600 flex-grow ml-8"></div>
             </div>
-            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mt-4 md:mt-6">
-              Have questions? We&apos;re here to help. Send us a message and we&apos;ll respond as soon as possible.
+            <p className="text-base sm:text-xl text-gray-300 mt-6 max-w-3xl">
+              Ready to transform your land? Fill out the form below and we&apos;ll get back to you within 24 hours.
             </p>
           </div>
           <ContactForm />

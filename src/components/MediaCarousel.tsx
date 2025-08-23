@@ -3,21 +3,21 @@ import Image from 'next/image';
 
 // Sample media data - replace with your actual content
 const tier1Media: MediaItemType[] = [
-  { type: 'image', src: '/images/placeholder.svg', alt: 'Land clearing project 1' },
-  { type: 'video', src: '/videos/sample1.mp4', thumbnail: '/images/placeholder.svg', alt: 'Video: Land clearing project 1' },
-  { type: 'image', src: '/images/placeholder.svg', alt: 'Excavation work 1' },
-  { type: 'video', src: '/videos/sample2.mp4', thumbnail: '/images/placeholder.svg', alt: 'Video: Excavation work 1' },
-  { type: 'image', src: '/images/placeholder.svg', alt: 'Tree removal 1' },
-  { type: 'image', src: '/images/placeholder.svg', alt: 'Site preparation 1' },
+  { type: 'image', src: '/images/LandClearing.jpeg', alt: 'Land clearing project 1' },
+  { type: 'video', src: '/videos/sample1.mp4', thumbnail: '/images/TreeRemoval.jpeg', alt: 'Video: Land clearing project 1' },
+  { type: 'image', src: '/images/Excavation.jpeg', alt: 'Excavation work 1' },
+  { type: 'video', src: '/videos/sample2.mp4', thumbnail: '/images/DrivewayConstruction.jpeg', alt: 'Video: Excavation work 1' },
+  { type: 'image', src: '/images/TreeRemoval.jpeg', alt: 'Tree removal 1' },
+  { type: 'image', src: '/images/LandGrading.jpeg', alt: 'Site preparation 1' },
 ];
 
 const tier2Media: MediaItemType[] = [
-  { type: 'video', src: '/videos/sample3.mp4', thumbnail: '/images/placeholder.svg', alt: 'Video: Land clearing project 2' },
-  { type: 'image', src: '/images/placeholder.svg', alt: 'Land clearing project 2' },
-  { type: 'image', src: '/images/placeholder.svg', alt: 'Excavation work 2' },
-  { type: 'video', src: '/videos/sample4.mp4', thumbnail: '/images/placeholder.svg', alt: 'Video: Excavation work 2' },
-  { type: 'image', src: '/images/placeholder.svg', alt: 'Tree removal 2' },
-  { type: 'image', src: '/images/placeholder.svg', alt: 'Site preparation 2' },
+  { type: 'video', src: '/videos/sample3.mp4', thumbnail: '/images/SepticInstallation.jpeg', alt: 'Video: Land clearing project 2' },
+  { type: 'image', src: '/images/LandClearing.jpeg', alt: 'Land clearing project 2' },
+  { type: 'image', src: '/images/Excavation.jpeg', alt: 'Excavation work 2' },
+  { type: 'video', src: '/videos/sample4.mp4', thumbnail: '/images/DrivewayConstruction.jpeg', alt: 'Video: Excavation work 2' },
+  { type: 'image', src: '/images/TreeRemoval.jpeg', alt: 'Tree removal 2' },
+  { type: 'image', src: '/images/LandGrading.jpeg', alt: 'Site preparation 2' },
 ];
 
 // Define a type for media items
@@ -55,7 +55,7 @@ const MediaItem = ({ item, index, onItemClick }: MediaItemProps) => {
       {item.type === 'video' && (
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center transform group-hover:scale-110 transition-all duration-300">
-            <svg className="w-6 h-6 text-white translate-x-0.5" fill="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
               <path d="M8 5v14l11-7z" />
             </svg>
           </div>
@@ -127,7 +127,7 @@ export default function MediaCarousel() {
         <div className="mb-20">
           <div className="flex items-center">
             <h2 className="text-6xl font-extrabold text-white">
-              OUR WORK
+              <span className="text-red-600">OUR</span> WORK
             </h2>
             <div className="h-[2px] bg-red-600 flex-grow ml-8"></div>
           </div>

@@ -120,18 +120,7 @@ export default function ContactForm() {
   return (
     <div className="relative py-24">
       <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="mb-20">
-          <div className="flex items-center">
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white">
-              CONTACT US
-            </h2>
-            <div className="h-[2px] bg-red-600 flex-grow ml-8"></div>
-          </div>
-          <p className="text-base sm:text-xl text-gray-300 mt-6 max-w-3xl">
-            Ready to transform your land? Fill out the form below and we&apos;ll get back to you within 24 hours.
-          </p>
-        </div>
+
 
         {/* Form */}
         <div className="max-w-3xl mx-auto">

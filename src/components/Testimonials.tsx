@@ -1,28 +1,24 @@
 import { useState, useEffect, useCallback } from 'react';
-import Image from 'next/image';
 
 const testimonials = [
   {
     id: 1,
     name: "John Smith",
     role: "Property Owner",
-    image: "/images/placeholder.svg",
-    quote: "TN Dirt Pros transformed our overgrown property into a beautiful, usable space. Their professionalism and attention to detail were outstanding.",
+    quote: "They transformed our overgrown property into a beautiful, usable space. Their professionalism and attention to detail were outstanding.",
     rating: 5
   },
   {
     id: 2,
     name: "Sarah Johnson",
     role: "Real Estate Developer",
-    image: "/images/placeholder.svg",
-    quote: "We&apos;ve worked with many land clearing companies, but TN Dirt Pros stands out for their reliability and quality of work. They&apos;re our go-to team now.",
+    quote: "We've worked with many land clearing companies, but this team stands out for their reliability and quality of work. They're our go-to choice now.",
     rating: 5
   },
   {
     id: 3,
     name: "Mike Williams",
     role: "Homeowner",
-    image: "/images/placeholder.svg",
     quote: "The team was incredibly efficient and professional. They cleared our lot for our new home construction ahead of schedule.",
     rating: 5
   },
@@ -30,7 +26,6 @@ const testimonials = [
     id: 4,
     name: "Emily Davis",
     role: "Farm Owner",
-    image: "/images/placeholder.svg",
     quote: "Their expertise in land clearing and grading is unmatched. They helped us prepare our farmland while preserving important natural features.",
     rating: 5
   }
@@ -104,16 +99,8 @@ export default function Testimonials() {
                       <p className="text-base sm:text-xl text-white italic mb-8">&quot;{testimonial.quote}&quot;</p>
                     </div>
                     <div className="flex items-center">
-                      <div className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden">
-                        <Image
-                          src={testimonial.image}
-                          alt={testimonial.name}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="ml-3 sm:ml-4">
-                        <h4 className="text-base sm:text-lg font-semibold text-white">{testimonial.name}</h4>
+                      <div>
+                        <h4 className="text-base sm:text-lg font-semibold text-red-600">{testimonial.name}</h4>
                         <p className="text-gray-400 text-sm sm:text-base">{testimonial.role}</p>
                       </div>
                     </div>

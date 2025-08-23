@@ -1,12 +1,13 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const blogPosts = [
   {
     id: 1,
     title: "Essential Land Clearing Tips for Property Development",
     excerpt: "Learn the key considerations and best practices for clearing land effectively and sustainably for your next development project.",
-    image: "/images/placeholder.svg",
+    image: "/images/LandClearing.jpeg",
     date: "March 15, 2024",
     readTime: "5 min read",
     category: "Land Clearing"
@@ -15,7 +16,7 @@ const blogPosts = [
     id: 2,
     title: "The Impact of Professional Tree Removal on Property Value",
     excerpt: "Discover how strategic tree removal can enhance your property&apos;s value and create more usable space.",
-    image: "/images/placeholder.svg",
+    image: "/images/TreeRemoval.jpeg",
     date: "March 10, 2024",
     readTime: "4 min read",
     category: "Tree Removal"
@@ -24,7 +25,7 @@ const blogPosts = [
     id: 3,
     title: "Modern Techniques in Driveway Construction",
     excerpt: "Explore the latest methods and materials being used in driveway construction for durability and aesthetics.",
-    image: "/images/placeholder.svg",
+    image: "/images/DrivewayConstruction.jpeg",
     date: "March 5, 2024",
     readTime: "6 min read",
     category: "Construction"
@@ -35,18 +36,7 @@ export default function Blog() {
   return (
     <div className="relative py-24">
       <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="mb-20">
-          <div className="flex items-center">
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white">
-              LATEST NEWS
-            </h2>
-            <div className="h-[2px] bg-red-600 flex-grow ml-8"></div>
-          </div>
-          <p className="text-base sm:text-xl text-gray-300 mt-6 max-w-3xl">
-            Stay updated with our latest articles, tips, and industry insights.
-          </p>
-        </div>
+
 
         {/* Blog Posts Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -105,13 +95,15 @@ export default function Blog() {
 
         {/* View All Button */}
         <div className="mt-12 sm:mt-16 text-center">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-6 py-3 sm:px-8 sm:py-4 bg-red-600 text-white text-base sm:text-lg font-semibold rounded-md hover:bg-red-700 transition-colors duration-200"
-          >
-            View All Articles
-          </motion.button>
+          <Link href="/blog">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-3 sm:px-8 sm:py-4 bg-red-600 text-white text-base sm:text-lg font-semibold rounded-md hover:bg-red-700 transition-colors duration-200"
+            >
+              View All Articles
+            </motion.button>
+          </Link>
         </div>
       </div>
     </div>

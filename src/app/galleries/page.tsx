@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import Footer from '@/components/Footer';
 
 // Gallery categories and images
 const categories = [
@@ -9,7 +10,6 @@ const categories = [
   { id: 'land-clearing', name: 'Land Clearing' },
   { id: 'tree-removal', name: 'Tree Removal' },
   { id: 'driveways', name: 'Driveways' },
-  { id: 'excavation', name: 'Excavation' },
   { id: 'septic', name: 'Septic Installation' }
 ];
 
@@ -18,64 +18,30 @@ const galleryItems = [
     id: 1,
     category: 'land-clearing',
     title: 'Commercial Land Clearing',
-    description: '10-acre commercial property clearing in Cleveland, TN',
-    image: '/images/placeholder.svg'
+    description: '10-acre commercial property clearing',
+    image: '/images/LandClearing.jpeg'
   },
   {
     id: 2,
     category: 'tree-removal',
     title: 'Emergency Tree Removal',
     description: 'Storm damage cleanup and tree removal',
-    image: '/images/placeholder.svg'
+    image: '/images/TreeRemoval.jpeg'
   },
   {
     id: 3,
     category: 'driveways',
     title: 'Custom Driveway',
     description: 'Gravel driveway installation with proper drainage',
-    image: '/images/placeholder.svg'
+    image: '/images/DrivewayConstruction.jpeg'
   },
-  {
-    id: 4,
-    category: 'excavation',
-    title: 'Pool Excavation',
-    description: 'Residential pool site preparation',
-    image: '/images/placeholder.svg'
-  },
+
   {
     id: 5,
     category: 'septic',
     title: 'Septic System',
     description: 'Complete septic system installation',
-    image: '/images/placeholder.svg'
-  },
-  {
-    id: 6,
-    category: 'land-clearing',
-    title: 'Residential Clearing',
-    description: 'Home site preparation and clearing',
-    image: '/images/placeholder.svg'
-  },
-  {
-    id: 7,
-    category: 'driveways',
-    title: 'Long Driveway',
-    description: 'Rural property access road construction',
-    image: '/images/placeholder.svg'
-  },
-  {
-    id: 8,
-    category: 'excavation',
-    title: 'Foundation Prep',
-    description: 'New construction foundation excavation',
-    image: '/images/placeholder.svg'
-  },
-  {
-    id: 9,
-    category: 'tree-removal',
-    title: 'Large Tree Removal',
-    description: 'Safe removal of hazardous trees',
-    image: '/images/placeholder.svg'
+    image: '/images/SepticInstallation.jpeg'
   }
 ];
 
@@ -103,7 +69,7 @@ export default function GalleriesPage() {
             transition={{ duration: 0.6 }}
             className="text-6xl md:text-7xl font-extrabold text-white mb-6"
           >
-            Our Work
+            <span className="text-red-600">OUR</span> WORK
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -117,10 +83,10 @@ export default function GalleriesPage() {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-24 bg-gradient-to-b from-neutral-900 to-black">
+      <section className="py-8 bg-gradient-to-b from-neutral-900 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-4 mb-16">
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
             {categories.map((category) => (
               <button
                 key={category.id}
@@ -157,8 +123,8 @@ export default function GalleriesPage() {
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-6 group-hover:translate-y-0 transition-transform duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-90 group-hover:opacity-0 transition-opacity duration-300" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-0 group-hover:opacity-0 transition-opacity duration-300">
                       <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
                       <p className="text-gray-300">{item.description}</p>
                     </div>
@@ -205,7 +171,7 @@ export default function GalleriesPage() {
       </AnimatePresence>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-b from-black to-neutral-900">
+      <section className="py-12 bg-gradient-to-b from-black to-neutral-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -218,7 +184,7 @@ export default function GalleriesPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto"
+            className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto"
           >
             Let&apos;s discuss your project and create a custom solution that meets your needs.
           </motion.p>
@@ -228,15 +194,23 @@ export default function GalleriesPage() {
             transition={{ delay: 0.4 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <button className="px-8 py-4 bg-red-600 text-white text-lg font-semibold rounded-md hover:bg-red-700 transition-colors duration-200 min-w-[200px]">
+            <button 
+              onClick={(e) => e.preventDefault()} 
+              className="px-8 py-4 bg-red-600 text-white text-lg font-semibold rounded-md hover:bg-red-700 transition-colors duration-200 min-w-[200px] cursor-pointer"
+            >
               Get Started
             </button>
-            <button className="px-8 py-4 border-2 border-red-600 text-white text-lg font-semibold rounded-md hover:bg-red-600/10 transition-colors duration-200 min-w-[200px]">
+            <button 
+              onClick={(e) => e.preventDefault()} 
+              className="px-8 py-4 border-2 border-red-600 text-white text-lg font-semibold rounded-md hover:bg-red-600/10 transition-colors duration-200 min-w-[200px] cursor-pointer"
+            >
               View Services
             </button>
           </motion.div>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 } 

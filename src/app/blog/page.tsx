@@ -2,15 +2,13 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Footer from '@/components/Footer';
 
 // Blog data
 const categories = [
   { id: 'all', name: 'All Posts' },
-  { id: 'land-clearing', name: 'Land Clearing' },
   { id: 'tree-removal', name: 'Tree Removal' },
-  { id: 'construction', name: 'Construction' },
-  { id: 'tips', name: 'Tips & Advice' },
-  { id: 'industry', name: 'Industry News' }
+  { id: 'construction', name: 'Construction' }
 ];
 
 const blogPosts = [
@@ -19,7 +17,7 @@ const blogPosts = [
     title: "Essential Land Clearing Tips for Property Development",
     excerpt: "Learn the key considerations and best practices for clearing land effectively and sustainably for your next development project.",
     content: "Full article content here...",
-    image: "/images/placeholder.svg",
+    image: "/images/LandClearing.jpeg",
     date: "2024-03-15",
     readTime: "5 min read",
     category: "land-clearing",
@@ -35,7 +33,7 @@ const blogPosts = [
     title: "The Impact of Professional Tree Removal on Property Value",
     excerpt: "Discover how strategic tree removal can enhance your property's value and create more usable space.",
     content: "Full article content here...",
-    image: "/images/placeholder.svg",
+    image: "/images/TreeRemoval.jpeg",
     date: "2024-03-10",
     readTime: "4 min read",
     category: "tree-removal",
@@ -51,7 +49,7 @@ const blogPosts = [
     title: "Modern Techniques in Driveway Construction",
     excerpt: "Explore the latest methods and materials being used in driveway construction for durability and aesthetics.",
     content: "Full article content here...",
-    image: "/images/placeholder.svg",
+    image: "/images/DrivewayConstruction.jpeg",
     date: "2024-03-05",
     readTime: "6 min read",
     category: "construction",
@@ -59,54 +57,6 @@ const blogPosts = [
     author: {
       name: "Mike Williams",
       role: "Construction Specialist",
-      image: "/images/placeholder.svg"
-    }
-  },
-  {
-    id: 4,
-    title: "Sustainable Land Clearing Practices",
-    excerpt: "Understanding how to clear land while minimizing environmental impact and preserving natural resources.",
-    content: "Full article content here...",
-    image: "/images/placeholder.svg",
-    date: "2024-03-01",
-    readTime: "7 min read",
-    category: "land-clearing",
-    featured: false,
-    author: {
-      name: "Emily Davis",
-      role: "Environmental Consultant",
-      image: "/images/placeholder.svg"
-    }
-  },
-  {
-    id: 5,
-    title: "Preparing Your Property for Tree Removal",
-    excerpt: "A comprehensive guide to getting your property ready for professional tree removal services.",
-    content: "Full article content here...",
-    image: "/images/placeholder.svg",
-    date: "2024-02-25",
-    readTime: "5 min read",
-    category: "tree-removal",
-    featured: false,
-    author: {
-      name: "David Wilson",
-      role: "Safety Expert",
-      image: "/images/placeholder.svg"
-    }
-  },
-  {
-    id: 6,
-    title: "Top 10 Property Development Tips",
-    excerpt: "Expert advice for successful property development projects, from planning to execution.",
-    content: "Full article content here...",
-    image: "/images/placeholder.svg",
-    date: "2024-02-20",
-    readTime: "8 min read",
-    category: "tips",
-    featured: false,
-    author: {
-      name: "Lisa Thompson",
-      role: "Development Consultant",
       image: "/images/placeholder.svg"
     }
   }
@@ -123,7 +73,7 @@ export default function BlogPage() {
       post.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-  const featuredPosts = blogPosts.filter(post => post.featured);
+
 
   return (
     <main className="min-h-screen bg-black">
@@ -141,7 +91,7 @@ export default function BlogPage() {
             transition={{ duration: 0.6 }}
             className="text-6xl md:text-7xl font-extrabold text-white mb-6"
           >
-            Our Blog
+            <span className="text-red-600">OUR</span> BLOG
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -151,68 +101,6 @@ export default function BlogPage() {
           >
             Stay updated with our latest articles, tips, and industry insights.
           </motion.p>
-        </div>
-      </section>
-
-      {/* Featured Posts */}
-      <section className="py-24 bg-gradient-to-b from-neutral-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white mb-12">Featured Articles</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {featuredPosts.map((post, index) => (
-              <motion.article
-                key={post.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
-                className="bg-neutral-900/50 backdrop-blur-sm rounded-lg overflow-hidden border border-white/10 hover:border-red-500/30 transition-all duration-300 group"
-              >
-                <div className="relative h-64">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/80 to-transparent" />
-                  <div className="absolute bottom-4 left-4">
-                    <span className="px-3 py-1 bg-red-600 text-white text-sm font-medium rounded-full">
-                      {categories.find(cat => cat.id === post.category)?.name}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center text-sm text-gray-400 mb-4">
-                    <span>{new Date(post.date).toLocaleDateString('en-US', { 
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    })}</span>
-                    <span className="mx-2">•</span>
-                    <span>{post.readTime}</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-red-500 transition-colors duration-200">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-300 mb-6">{post.excerpt}</p>
-                  <div className="flex items-center">
-                    <div className="relative w-10 h-10 rounded-full overflow-hidden">
-                      <Image
-                        src={post.author.image}
-                        alt={post.author.name}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="ml-3">
-                      <p className="text-sm font-medium text-white">{post.author.name}</p>
-                      <p className="text-sm text-gray-400">{post.author.role}</p>
-                    </div>
-                  </div>
-                </div>
-              </motion.article>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -269,14 +157,14 @@ export default function BlogPage() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-neutral-900/50 backdrop-blur-sm rounded-lg overflow-hidden border border-white/10 hover:border-red-500/30 transition-all duration-300 group"
               >
-                <div className="relative h-48">
+                <div className="relative h-48 overflow-hidden">
                   <Image
                     src={post.image}
                     alt={post.title}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/80 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/80 to-transparent group-hover:opacity-50 transition-opacity duration-300 group-hover:scale-105 transition-transform duration-300" />
                   <div className="absolute bottom-4 left-4">
                     <span className="px-3 py-1 bg-red-600 text-white text-sm font-medium rounded-full">
                       {categories.find(cat => cat.id === post.category)?.name}
@@ -298,17 +186,9 @@ export default function BlogPage() {
                   </h3>
                   <p className="text-gray-300 mb-6">{post.excerpt}</p>
                   <div className="flex items-center">
-                    <div className="relative w-8 h-8 rounded-full overflow-hidden">
-                      <Image
-                        src={post.author.image}
-                        alt={post.author.name}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="ml-3">
-                      <p className="text-sm font-medium text-white">{post.author.name}</p>
-                      <p className="text-xs text-gray-400">{post.author.role}</p>
+                    <div>
+                      <p className="text-base font-semibold text-red-500">{post.author.name}</p>
+                      <p className="text-xs text-white">{post.author.role}</p>
                     </div>
                   </div>
                 </div>
@@ -319,7 +199,7 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-24 bg-gradient-to-b from-neutral-900 to-black">
+      <section className="py-12 bg-gradient-to-b from-neutral-900 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -332,7 +212,7 @@ export default function BlogPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto"
+            className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto"
           >
             Get the latest articles, tips, and industry news delivered straight to your inbox.
           </motion.p>
@@ -348,13 +228,18 @@ export default function BlogPage() {
                 placeholder="Enter your email"
                 className="flex-1 bg-neutral-900 text-white border border-neutral-700 rounded-lg px-6 py-4 focus:outline-none focus:ring-2 focus:ring-red-500"
               />
-              <button className="px-8 py-4 bg-red-600 text-white text-lg font-semibold rounded-lg hover:bg-red-700 transition-colors duration-200">
+              <button 
+                onClick={(e) => e.preventDefault()} 
+                className="px-8 py-4 bg-red-600 text-white text-lg font-semibold rounded-lg hover:bg-red-700 transition-colors duration-200 cursor-pointer"
+              >
                 Subscribe
               </button>
             </div>
           </motion.form>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 } 

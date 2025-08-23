@@ -1,25 +1,25 @@
 'use client';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
+import Footer from '@/components/Footer';
 
 // Review data
 const reviews = [
   {
     id: 1,
     name: "John Smith",
-    location: "Cleveland, TN",
+    location: "Property Owner",
     service: "Land Clearing",
     rating: 5,
     date: "2024-03-15",
     image: "/images/placeholder.svg",
-    review: "TN Dirt Pros did an amazing job clearing our 5-acre property. They were professional, efficient, and left the site clean. Highly recommend their services!",
+    review: "They did an amazing job clearing our 5-acre property. Professional, efficient, and left the site clean. Highly recommend!",
     verified: true
   },
   {
     id: 2,
     name: "Sarah Johnson",
-    location: "Chattanooga, TN",
+    location: "Homeowner",
     service: "Tree Removal",
     rating: 5,
     date: "2024-03-10",
@@ -30,45 +30,12 @@ const reviews = [
   {
     id: 3,
     name: "Mike Williams",
-    location: "Athens, TN",
+    location: "Property Developer",
     service: "Driveway Construction",
     rating: 5,
     date: "2024-03-05",
     image: "/images/placeholder.svg",
     review: "Excellent work on our new driveway. The team was knowledgeable and made sure everything was properly graded for drainage.",
-    verified: true
-  },
-  {
-    id: 4,
-    name: "Emily Davis",
-    location: "Cleveland, TN",
-    service: "Septic Installation",
-    rating: 5,
-    date: "2024-02-28",
-    image: "/images/placeholder.svg",
-    review: "Very pleased with the septic system installation. They handled all the permits and inspections, making the process stress-free.",
-    verified: true
-  },
-  {
-    id: 5,
-    name: "David Wilson",
-    location: "Ooltewah, TN",
-    service: "Land Clearing",
-    rating: 5,
-    date: "2024-02-20",
-    image: "/images/placeholder.svg",
-    review: "Great experience working with TN Dirt Pros. They cleared our lot for new construction and did an excellent job preserving the trees we wanted to keep.",
-    verified: true
-  },
-  {
-    id: 6,
-    name: "Lisa Thompson",
-    location: "Cleveland, TN",
-    service: "Excavation",
-    rating: 5,
-    date: "2024-02-15",
-    image: "/images/placeholder.svg",
-    review: "Professional excavation work for our new pool. The team was careful around existing utilities and finished on schedule.",
     verified: true
   }
 ];
@@ -77,25 +44,15 @@ const services = [
   { id: 'all', name: 'All Services' },
   { id: 'land-clearing', name: 'Land Clearing' },
   { id: 'tree-removal', name: 'Tree Removal' },
-  { id: 'driveway-construction', name: 'Driveway Construction' },
-  { id: 'septic-installation', name: 'Septic Installation' },
-  { id: 'excavation', name: 'Excavation' }
+  { id: 'driveway-construction', name: 'Driveway Construction' }
 ];
 
 export default function ReviewsPage() {
   const [selectedService, setSelectedService] = useState('all');
-  const [sortBy, setSortBy] = useState<'date' | 'rating'>('date');
 
   const filteredReviews = selectedService === 'all'
     ? reviews
     : reviews.filter(review => review.service.toLowerCase().replace(' ', '-') === selectedService);
-
-  const sortedReviews = [...filteredReviews].sort((a, b) => {
-    if (sortBy === 'date') {
-      return new Date(b.date).getTime() - new Date(a.date).getTime();
-    }
-    return b.rating - a.rating;
-  });
 
   return (
     <main className="min-h-screen bg-black">
@@ -113,7 +70,7 @@ export default function ReviewsPage() {
             transition={{ duration: 0.6 }}
             className="text-6xl md:text-7xl font-extrabold text-white mb-6"
           >
-            Customer Reviews
+            <span className="text-red-600">CUSTOMER</span> REVIEWS
           </motion.h1>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -122,7 +79,7 @@ export default function ReviewsPage() {
             className="flex items-center justify-center gap-4 mb-8"
           >
             <div className="flex items-center">
-              <span className="text-4xl font-bold text-white">4.9</span>
+              <span className="text-4xl font-bold text-white">5.0</span>
               <div className="ml-2">
                 <div className="flex items-center">
                   {[...Array(5)].map((_, i) => (
@@ -139,10 +96,10 @@ export default function ReviewsPage() {
       </section>
 
       {/* Reviews Section */}
-      <section className="py-24 bg-gradient-to-b from-neutral-900 to-black">
+      <section className="py-12 bg-gradient-to-b from-neutral-900 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Filters */}
-          <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-8">
+          <div className="flex justify-center mb-8">
             <div className="flex flex-wrap justify-center gap-4">
               {services.map((service) => (
                 <button
@@ -158,23 +115,12 @@ export default function ReviewsPage() {
                 </button>
               ))}
             </div>
-            <div className="flex items-center gap-4">
-              <span className="text-gray-400">Sort by:</span>
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value as 'date' | 'rating')}
-                className="bg-neutral-900 text-white border border-neutral-700 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
-              >
-                <option value="date">Most Recent</option>
-                <option value="rating">Highest Rated</option>
-              </select>
-            </div>
           </div>
 
           {/* Reviews Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <AnimatePresence>
-              {sortedReviews.map((review) => (
+              {filteredReviews.map((review) => (
                 <motion.div
                   key={review.id}
                   layout
@@ -183,26 +129,16 @@ export default function ReviewsPage() {
                   exit={{ opacity: 0, y: -20 }}
                   className="bg-neutral-900/50 backdrop-blur-sm rounded-lg p-6 border border-white/10"
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
-                      <Image
-                        src={review.image}
-                        alt={review.name}
-                        fill
-                        className="object-cover"
-                      />
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-lg font-semibold text-red-600">{review.name}</h3>
+                      {review.verified && (
+                        <svg className="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                      )}
                     </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h3 className="text-lg font-semibold text-white">{review.name}</h3>
-                        {review.verified && (
-                          <svg className="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                          </svg>
-                        )}
-                      </div>
-                      <p className="text-sm text-gray-400">{review.location}</p>
-                    </div>
+                    <p className="text-sm text-gray-400">{review.location}</p>
                   </div>
                   <div className="mt-4">
                     <div className="flex items-center gap-2 mb-2">
@@ -236,7 +172,7 @@ export default function ReviewsPage() {
       </section>
 
       {/* Write Review CTA */}
-      <section className="py-24 bg-gradient-to-b from-black to-neutral-900">
+      <section className="py-12 bg-gradient-to-b from-black to-neutral-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -249,7 +185,7 @@ export default function ReviewsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto"
+            className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto"
           >
             Had a great experience with TN Dirt Pros? We&apos;d love to hear about it!
           </motion.p>
@@ -257,12 +193,15 @@ export default function ReviewsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="px-8 py-4 bg-red-600 text-white text-lg font-semibold rounded-md hover:bg-red-700 transition-colors duration-200"
+            onClick={(e) => e.preventDefault()} 
+            className="px-8 py-4 bg-red-600 text-white text-lg font-semibold rounded-md hover:bg-red-700 transition-colors duration-200 cursor-pointer"
           >
             Write a Review
           </motion.button>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 } 
