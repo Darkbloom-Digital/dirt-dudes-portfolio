@@ -170,7 +170,7 @@ export default function BlogPage() {
                       {post.category === 'land-clearing' ? 'Land Clearing' : 
                        post.category === 'tree-removal' ? 'Tree Removal' : 
                        post.category === 'construction' ? 'Construction' : 
-                       categories.find(cat => cat.id === post.category)?.name}
+                       post.category || 'Unknown Category'}
                     </span>
                   </div>
                 </div>
