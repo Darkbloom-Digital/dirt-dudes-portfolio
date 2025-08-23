@@ -10,8 +10,8 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: 'TN Dirt Pros',
-  description: 'Professional land clearing services in Cleveland, TN',
+  title: 'Dirt Dudes - Professional Land Clearing & Excavation Services',
+  description: 'Professional land clearing and excavation services in Cleveland, TN',
 };
 
 export default function RootLayout({
