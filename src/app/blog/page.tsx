@@ -167,7 +167,10 @@ export default function BlogPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/80 to-transparent group-hover:opacity-50 transition-opacity duration-300 group-hover:scale-105 transition-transform duration-300" />
                   <div className="absolute bottom-4 left-4">
                     <span className="px-3 py-1 bg-red-600 text-white text-sm font-medium rounded-full">
-                      {categories.find(cat => cat.id === post.category)?.name}
+                      {post.category === 'land-clearing' ? 'Land Clearing' : 
+                       post.category === 'tree-removal' ? 'Tree Removal' : 
+                       post.category === 'construction' ? 'Construction' : 
+                       categories.find(cat => cat.id === post.category)?.name}
                     </span>
                   </div>
                 </div>

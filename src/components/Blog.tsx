@@ -57,8 +57,8 @@ export default function Blog() {
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/80 to-transparent" />
-                <div className="absolute bottom-4 left-4">
-                  <span className="px-3 py-1 bg-red-600 text-white text-sm font-medium rounded-full whitespace-nowrap">
+                <div className="absolute bottom-4 left-4 z-10">
+                  <span className="px-3 py-1 bg-red-600 text-white text-sm font-medium rounded-full">
                     {post.category}
                   </span>
                 </div>
